@@ -1,4 +1,4 @@
-public class Main {
+public class App {
     public static void main(String[] args) throws Exception {
         var numbers = new Array(3);
         numbers.insert(1);
