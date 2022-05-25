@@ -101,6 +101,58 @@ public class LinkedList {
         return array;
     }
 
+    public void reverse() {
+        if (isEmpty())
+            return;
+
+        var current = first.next;
+        var previous = first;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
+    public int getKthNodeFromTheEnd(int k) {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        var current = first;
+        var runner = first;
+        for (int i = 0; i < k; i++) {
+            if (runner == null)
+                throw new IllegalArgumentException();
+            runner = runner.next;
+        }
+
+        while (runner != null) {
+            current = current.next;
+            runner = runner.next;
+        }
+
+        return current.value;
+    }
+
+    public void printMiddle() {
+        var a = first;
+        var b = first;
+        while (b != null && b.next != null) {
+            a = a.next;
+            b = b.next.next;
+        }
+
+        if (b == last)
+            System.out.println(a.value);
+        else
+            System.out.println(a.value + " " + a.next.value);
+    }
+
     private Node getPreviousNode(Node node) {
         var current = first;
         while (current != null) {
