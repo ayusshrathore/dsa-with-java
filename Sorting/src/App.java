@@ -8,7 +8,7 @@ public class App {
 		// var sorter = new InsertionSort();
 		// var sorter = new MergeSort();
 		var sorter = new QuickSort();
-		sorter.sort(arr, 0, 4);
+		sorter.sort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 }
