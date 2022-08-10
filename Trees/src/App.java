@@ -15,5 +15,10 @@ public class App {
         // System.out.println(tree.height());
         // System.out.println(tree.min());
         tree.printNodesAtDistance(2);
+
+        AVLTree avlTree = new AVLTree();
+        avlTree.insert(10);
+        avlTree.insert(30);
+        avlTree.insert(20);
     }
 }
